@@ -32,7 +32,7 @@
         }
 
         .glass {
-            background: rgba(30, 41, 59, 0.4);
+            background: rgba(30, 41, 59, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -59,42 +59,71 @@
     <nav class="fixed w-full z-50 glass border-b border-gray-800 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="hidden md:block">
-                    <div class="flex items-center space-x-6 lg:space-x-8">
-                        <a href="#home"
-                            class="hover:text-sky-400 transition-colors px-3 py-2 text-sm font-semibold tracking-wide">Home</a>
-                        <a href="#about"
-                            class="hover:text-sky-400 transition-colors px-3 py-2 text-sm font-semibold tracking-wide">About</a>
-                        <a href="#education"
-                            class="hover:text-sky-400 transition-colors px-3 py-2 text-sm font-semibold tracking-wide">Pendidikan</a>
-                        <a href="#projects"
-                            class="hover:text-sky-400 transition-colors px-3 py-2 text-sm font-semibold tracking-wide">Project</a>
-                        <a href="#contact"
-                            class="px-5 py-2 text-sm font-semibold text-white bg-sky-500/10 border border-sky-500/30 rounded-full hover:bg-sky-500 hover:text-white transition-all">Contact</a>
-                    </div>
+
+                <!-- Bagian Kiri (Kosong) -->
+                <div></div>
+
+                <!-- Tombol Hamburger (Hanya tampil di HP) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Menu Navigasi Desktop (Disembunyikan di HP) -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#home"
+                        class="hover:text-sky-400 transition-colors px-2 py-2 text-sm font-semibold tracking-wide">Home</a>
+                    <a href="#about"
+                        class="hover:text-sky-400 transition-colors px-2 py-2 text-sm font-semibold tracking-wide">About</a>
+                    <a href="#education"
+                        class="hover:text-sky-400 transition-colors px-2 py-2 text-sm font-semibold tracking-wide">Pendidikan</a>
+                    <a href="#projects"
+                        class="hover:text-sky-400 transition-colors px-2 py-2 text-sm font-semibold tracking-wide">Projects</a>
+                    <a href="#contact"
+                        class="px-5 py-2 text-sm font-semibold text-white bg-sky-500/10 border border-sky-500/30 rounded-full hover:bg-sky-500 hover:text-white transition-all">Contact</a>
                 </div>
             </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile (Muncul saat tombol hamburger diklik) -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-[#0f172a]/95 backdrop-blur-md border-b border-gray-800 pb-6 pt-2 px-6 flex-col space-y-4 shadow-xl md:hidden">
+            <a href="#home" class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">Home</a>
+            <a href="#about"
+                class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">About</a>
+            <a href="#education"
+                class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">Pendidikan</a>
+            <a href="#projects"
+                class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">Projects</a>
+            <a href="#contact"
+                class="inline-block mt-4 px-6 py-2 text-center text-sm font-semibold text-white bg-sky-500/20 border border-sky-500/30 rounded-full hover:bg-sky-500 hover:text-white transition-all mobile-link">Contact</a>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 relative">
+    <section id="home"
+        class="flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 pb-12 gap-8 relative">
         <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="md:w-3/5 z-10" data-aos="fade-right">
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+            <!-- Teks -->
+            <div class="md:w-3/5 z-10 text-center md:text-left" data-aos="fade-right">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
                     Halo, Saya <br>
                     <span class="text-gradient">Fadliansyah Rizki</span>
                 </h1>
                 <h2 class="text-xl md:text-2xl text-gray-400 font-medium mb-6">Web Developer</h2>
 
-                <p class="text-gray-400 mb-8 max-w-lg text-base md:text-lg leading-relaxed">
+                <p class="text-gray-400 mb-8 max-w-lg text-base md:text-lg leading-relaxed mx-auto md:mx-0">
                     Siswa SMKN 1 Kawali yang fokus membangun aplikasi web dinamis dan merancang sistem <span
                         class="text-white font-semibold">backend</span> yang efisien.
                 </p>
 
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
                     <a href="#projects"
                         class="bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg">
                         Lihat Proyek
@@ -106,18 +135,20 @@
                 </div>
             </div>
 
+            <!-- Foto Profil -->
             <div class="md:w-2/5 flex justify-center items-center" data-aos="fade-left">
-                <div class="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
+                <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
                     <div
-                        class="absolute inset-0 bg-gradient-to-tr from-sky-500 to-purple-500 rounded-full blur-[60px] opacity-30 animate-pulse">
+                        class="absolute inset-0 bg-gradient-to-tr from-sky-500 to-purple-500 rounded-full blur-[50px] opacity-30 animate-pulse">
                     </div>
                     <div
-                        class="w-72 h-72 md:w-80 md:h-80 rounded-full border-2 border-gray-700/60 overflow-hidden bg-gray-900 shadow-2xl glass p-2 flex items-center justify-center z-10">
+                        class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full border-2 border-gray-700/60 overflow-hidden bg-gray-900 shadow-2xl glass p-2 flex items-center justify-center z-10">
                         <img src="profil-fadli.jpg" alt="Foto Profil Fadliansyah Rizki"
                             class="w-full h-full object-cover rounded-full">
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -239,7 +270,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Portfolio</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Project</h3>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Karya Terkini</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -251,17 +282,17 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-white mb-3">Solusi Koneksi</h3>
-                        <p class="text-gray-400 text-sm mb-6">Aplikasi web company profile yang responsif dan interaktif untuk
-                            menyajikan informasi layanan jaringan secara profesional. Dibangun menggunakan framework
-                            Laravel dengan sistem pengelolaan konten yang dinamis</p>
+                        <p class="text-gray-400 text-sm mb-6">Aplikasi web company profile yang responsif dan interaktif
+                            untuk menyajikan informasi layanan jaringan secara profesional. Dibangun menggunakan
+                            framework Laravel dengan sistem pengelolaan konten yang dinamis.</p>
                         <div class="flex gap-2">
                             <span
-                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-sky-300 rounded-full">Laravel</span>
+                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-red-300 rounded-full">Laravel</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Web Kasir (Menggantikan Web Food Order) -->
+                <!-- Project 2: Web Kasir -->
                 <div class="glass-card rounded-3xl overflow-hidden group" data-aos="fade-up">
                     <div class="h-56 bg-gray-900 relative overflow-hidden flex items-center justify-center p-4">
                         <img src="web-kasir.png" alt="Web Kasir"
@@ -269,10 +300,12 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-white mb-3">Web Kasir</h3>
-                        <p class="text-gray-400 text-sm mb-6">Aplikasi sistem point-of-sale (POS) dan manajemen inventaris toko untuk memantau stok produk, memproses transaksi, serta menyajikan laporan statistik penjualan secara real-time.</p>
+                        <p class="text-gray-400 text-sm mb-6">Aplikasi sistem point-of-sale (POS) dan manajemen
+                            inventaris toko untuk memantau stok produk, memproses transaksi, serta menyajikan laporan
+                            statistik penjualan secara real-time.</p>
                         <div class="flex gap-2">
                             <span
-                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-purple-300 rounded-full">Laravel</span>
+                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-red-300 rounded-full">Laravel</span>
                         </div>
                     </div>
                 </div>
@@ -285,10 +318,12 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-white mb-3">Admin Dashboard</h3>
-                        <p class="text-gray-400 text-sm mb-6">Sistem backend berbasis arsitektur Model-View-Controller (MVC) yang dilengkapi fitur autentikasi aman untuk pengelolaan data CRUD (Create, Read, Update, Delete) secara efisien.</p>
+                        <p class="text-gray-400 text-sm mb-6">Sistem backend berbasis arsitektur Model-View-Controller
+                            (MVC) yang dilengkapi fitur autentikasi aman untuk pengelolaan data CRUD (Create, Read,
+                            Update, Delete) secara efisien.</p>
                         <div class="flex gap-2">
                             <span
-                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-purple-300 rounded-full">Laravel</span>
+                                class="text-xs font-bold px-3 py-1 bg-gray-800 text-red-300 rounded-full">Laravel</span>
                         </div>
                     </div>
                 </div>
@@ -299,29 +334,22 @@
     <!-- Contact Section -->
     <section id="contact" class="py-24 relative z-10">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
-            <div class="glass-card p-12 rounded-[3rem] border border-gray-700 relative overflow-hidden">
-                <h2 class="text-4xl font-extrabold text-white mb-6">Contact Me</h2>
-                <p class="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">Kalau ada yang mau di tanyakan, Langsung lewat
-                    link
-                    di bawah ini!.</p>
+            <div class="glass-card p-8 sm:p-12 rounded-[3rem] border border-gray-700 relative overflow-hidden">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Contact Me!</h2>
+                <p class="text-gray-400 mb-10 text-base sm:text-lg max-w-2xl mx-auto">Kalau ada yang mau di tanyakan.
+                    Langsung lewat link di bawah ini.</p>
 
                 <div class="flex justify-center flex-wrap gap-6">
-
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/padliansyahrizki?cplk=MW5tb2N1d3Z4c25zcg==" target="_blank"
                         class="flex items-center justify-center w-14 h-14 bg-gray-900 rounded-2xl border border-gray-700 hover:border-pink-500 hover:bg-pink-500/10 transition-all"
                         title="Instagram">
                         <i class="fab fa-instagram text-2xl text-gray-400 hover:text-pink-500"></i>
                     </a>
-
-                    <!-- TikTok -->
                     <a href="https://vm.tiktok.com/ZS9yvHjV3kyUC-xBs9F/" target="_blank"
                         class="flex items-center justify-center w-14 h-14 bg-gray-900 rounded-2xl border border-gray-700 hover:border-gray-400 hover:bg-gray-800 transition-all"
                         title="TikTok">
                         <i class="fab fa-tiktok text-2xl text-gray-400 hover:text-white"></i>
                     </a>
-
-                    <!-- Email -->
                     <a href="mailto:fadliansyah15062009@gmail.com"
                         class="flex items-center justify-center w-14 h-14 bg-gray-900 rounded-2xl border border-gray-700 hover:border-sky-500 hover:bg-sky-500/10 transition-all"
                         title="Email">
@@ -335,7 +363,8 @@
     <!-- Footer -->
     <footer class="py-8 text-center relative z-10">
         <p class="text-gray-500 text-sm font-medium">
-            &copy; 2026 Fadliansyah Rizki.
+            &copy; 2026 Fadliansyah Rizki. Didesain dengan <i class="fas fa-heart text-sky-500 mx-1"></i> dan Tailwind
+            CSS.
         </p>
     </footer>
 
