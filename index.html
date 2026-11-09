@@ -108,7 +108,7 @@
     <section id="home"
         class="flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 pb-12 gap-8 relative">
         <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between gap-12 mt-10 md:mt-0">
 
             <!-- Teks -->
             <div class="md:w-3/5 z-10 text-center md:text-left" data-aos="fade-right">
@@ -120,8 +120,7 @@
 
                 <p class="text-gray-400 mb-8 max-w-lg text-base md:text-lg leading-relaxed mx-auto md:mx-0">
                     Lulusan terbaru Web Developer dari SMKN 1 Kawali. Memiliki fokus kuat dalam membangun aplikasi web
-                    dinamis dan merancang arsitektur backend yang efisien<span class="text-white font-semibold">
-                        backend</span> yang efisien.
+                    dinamis dan merancang arsitektur <span class="text-white font-semibold">backend</span> yang efisien.
                 </p>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4">
@@ -167,7 +166,7 @@
                         Saya adalah lulusan SMK jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan
                         mendalam pada pengembangan perangkat lunak. Selama bersekolah. saya aktif mengasah keterampilan
                         teknis melalui pengerjaan proyek seperti membangun website dan mengelola database. Saya
-                        merupakan pribadi yang di siplin, bertanggung jawab, mudah beradaptasi dalam tim, dan memiliki
+                        merupakan pribadi yang disiplin, bertanggung jawab, mudah beradaptasi dalam tim, dan memiliki
                         komitmen tinggi untuk terus belajar serta memberikan hasil kerja terbaik.
                     </p>
                 </div>
@@ -218,9 +217,6 @@
                 <p class="text-gray-400 text-sm leading-relaxed">Mempelajari fundamental pemrograman,
                     pengembangan website, dan manajemen basis data.</p>
             </div>
-        </div>
-        </div>
-        </div>
         </div>
     </section>
 
@@ -328,7 +324,27 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inisialisasi Animasi AOS
         AOS.init({ once: true, offset: 50, duration: 800 });
+
+        // Logika Toggle Hamburger Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Buka/Tutup menu saat tombol hamburger diklik
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Tutup menu otomatis saat link diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
     </script>
 </body>
 
