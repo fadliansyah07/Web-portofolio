@@ -60,14 +60,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
 
-                <!-- Logo / Brand Name -->
-                <a href="#home" class="text-xl font-bold text-white tracking-wider">
-                    FADLIAN<span class="text-sky-400">SYAH</span>
-                </a>
+                <!-- Bagian Kiri (Kosong) -->
+                <div></div>
 
-                <!-- Tombol Hamburger (Tampil di HP) -->
+                <!-- Tombol Hamburger (Hanya tampil di HP) -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-gray-800/50 transition-all" aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
@@ -75,7 +73,7 @@
                     </button>
                 </div>
 
-                <!-- Menu Navigasi Desktop -->
+                <!-- Menu Navigasi Desktop (Disembunyikan di HP) -->
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="#home"
                         class="hover:text-sky-400 transition-colors px-2 py-2 text-sm font-semibold tracking-wide">Home</a>
@@ -91,9 +89,9 @@
             </div>
         </div>
 
-        <!-- Menu Dropdown Mobile -->
+        <!-- Menu Dropdown Mobile (Muncul saat tombol hamburger diklik) -->
         <div id="mobile-menu"
-            class="hidden absolute top-full left-0 w-full bg-[#0f172a]/95 backdrop-blur-md border-b border-gray-800 pb-6 pt-4 px-6 flex-col space-y-4 shadow-xl md:hidden">
+            class="hidden absolute top-full left-0 w-full bg-[#0f172a]/95 backdrop-blur-md border-b border-gray-800 pb-6 pt-2 px-6 flex-col space-y-4 shadow-xl md:hidden">
             <a href="#home" class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">Home</a>
             <a href="#about"
                 class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">About</a>
@@ -102,7 +100,7 @@
             <a href="#projects"
                 class="block text-gray-300 hover:text-sky-400 text-base font-semibold mobile-link">Projects</a>
             <a href="#contact"
-                class="inline-block mt-2 px-6 py-2.5 text-center text-sm font-semibold text-white bg-sky-500/20 border border-sky-500/30 rounded-full hover:bg-sky-500 hover:text-white transition-all mobile-link">Contact</a>
+                class="inline-block mt-4 px-6 py-2 text-center text-sm font-semibold text-white bg-sky-500/20 border border-sky-500/30 rounded-full hover:bg-sky-500 hover:text-white transition-all mobile-link">Contact</a>
         </div>
     </nav>
 
@@ -110,7 +108,7 @@
     <section id="home"
         class="flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 pb-12 gap-8 relative">
         <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 mt-6 md:mt-0">
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
             <!-- Teks -->
             <div class="md:w-3/5 z-10 text-center md:text-left" data-aos="fade-right">
@@ -122,7 +120,7 @@
 
                 <p class="text-gray-400 mb-8 max-w-lg text-base md:text-lg leading-relaxed mx-auto md:mx-0">
                     Lulusan terbaru Web Developer dari SMKN 1 Kawali. Memiliki fokus kuat dalam membangun aplikasi web
-                    dinamis dan merancang arsitektur <span class="text-white font-semibold">backend</span> yang efisien.
+                    dinamis dan merancang arsitektur backend yang efisien.
                 </p>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4">
@@ -137,7 +135,7 @@
                 </div>
             </div>
 
-            <!-- Foto Profil (Muncul Paling Atas di Mobile) -->
+            <!-- Foto Profil -->
             <div class="md:w-2/5 flex justify-center items-center" data-aos="fade-left">
                 <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
                     <div
@@ -213,7 +211,7 @@
                 <h3 class="text-3xl md:text-4xl font-extrabold text-white">Riwayat Akademik</h3>
             </div>
 
-            <div class="glass-card p-6 sm:p-8 rounded-3xl relative max-w-2xl mx-auto">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl relative">
                 <h4 class="text-xl font-bold text-white mb-1">SMKN 1 Kawali 2024-2027</h4>
                 <h5 class="text-sky-300 text-sm font-semibold mb-4">Rekayasa Perangkat Lunak (RPL)</h5>
                 <p class="text-gray-400 text-sm leading-relaxed">Mempelajari fundamental pemrograman,
@@ -324,39 +322,25 @@
         </p>
     </footer>
 
-    <!-- AOS Script & Hamburger Logic -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Inisialisasi AOS Animation
         AOS.init({ once: true, offset: 50, duration: 800 });
 
-        // Logika Toggle Hamburger Menu Mobile
+        // Script Toggle Menu Mobile (Hamburger Button)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         if (mobileMenuBtn && mobileMenu) {
-            // Buka / Tutup menu saat ikon garis 3 diklik
-            mobileMenuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
+            mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
             });
 
-            // Tutup menu otomatis saat salah satu link diklik
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
                 });
-            });
-
-            // Tutup menu saat area luar menu diklik
-            document.addEventListener('click', (e) => {
-                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                }
             });
         }
     </script>
